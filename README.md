@@ -16,7 +16,7 @@ extended with an agentic tool-calling architecture, tests and CI.
 - [x] Phase 3 — LangGraph agent with tools
 - [x] Phase 4 — full Streamlit UI
 - [x] Phase 5 — hardening and documentation
-- [ ] Phase 6 — publish to GitHub
+- [x] Phase 6 — publish to GitHub
 
 ## How it works
 
