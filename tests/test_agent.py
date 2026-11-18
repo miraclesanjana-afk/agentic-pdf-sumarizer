@@ -3,7 +3,7 @@ from __future__ import annotations
 from langchain_core.language_models.fake_chat_models import FakeListChatModel
 from langchain_core.messages import AIMessage
 
-from agent import agent_final_text, build_agent, run_agent
+from agent import agent_final_text, build_agent, run_agent, stream_agent_updates
 from config import Settings
 from pdf_processor import DocumentStore
 from tests.fakes import FakeToolModel
@@ -46,3 +46,11 @@ def test_run_agent_helper(tmp_path):
     agent, _ = build_fake_agent(tmp_path)
 
     assert run_agent(agent, "Load the PDF") == "PDF loaded successfully."
+
+
+def test_stream_agent_updates_yields_nodes(tmp_path):
+    agent, _ = build_fake_agent(tmp_path)
+
+    nodes = [next(iter(update)) for update in stream_agent_updates(agent, "Load the PDF")]
+
+    assert nodes == ["model", "tools", "model"]
