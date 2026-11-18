@@ -13,10 +13,20 @@ extended with an agentic tool-calling architecture and tests.
 - [x] **Phase 0** — validate Gemini API key and GitHub login
 - [x] **Phase 1** — project foundation, config and Streamlit skeleton
 - [x] **Phase 2** — PDF ingestion and chunking
-- [ ] **Phase 3** — LangGraph agent with tools
+- [x] **Phase 3** — LangGraph agent with tools
 - [ ] **Phase 4** — full Streamlit UI
 - [ ] **Phase 5** — hardening and documentation
 - [ ] **Phase 6** — publish to GitHub
+
+## Agent tools
+
+The LangGraph agent can call these tools:
+
+- `load_pdf(file_path)` — extract, clean and chunk a PDF; returns a `doc_id`
+- `summarize_document(doc_id, style)` — map→reduce summary in the chosen style
+- `analyze_document_structure(doc_id)` — sections and themes
+- `extract_key_quotes(doc_id)` — verbatim quotes
+- `list_loaded_documents()` — inventory of loaded files
 
 ## Setup
 

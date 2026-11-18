@@ -156,6 +156,10 @@ class DocumentStore:
             except KeyError as exc:
                 raise KeyError(f"Unknown document id: {doc_id}") from exc
 
+    def list_documents(self) -> list[Document]:
+        with self._lock:
+            return list(self._documents.values())
+
     def clear(self) -> None:
         with self._lock:
             self._documents.clear()

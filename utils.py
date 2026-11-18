@@ -20,3 +20,20 @@ def mask_secret(value: str) -> str:
     if len(value) <= 4:
         return "****"
     return f"****{value[-4:]}"
+
+
+def message_text(content: object) -> str:
+    """Normalize LangChain/Gemini message content into plain text."""
+    if isinstance(content, str):
+        return content
+    if isinstance(content, list):
+        parts: list[str] = []
+        for block in content:
+            if isinstance(block, str):
+                parts.append(block)
+            elif isinstance(block, dict) and block.get("type") == "text":
+                parts.append(str(block.get("text", "")))
+            elif hasattr(block, "text"):
+                parts.append(str(block.text))
+        return "".join(parts)
+    return str(content)
