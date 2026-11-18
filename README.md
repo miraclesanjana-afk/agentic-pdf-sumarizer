@@ -14,9 +14,12 @@ extended with an agentic tool-calling architecture and tests.
 - [x] **Phase 1** — project foundation, config and Streamlit skeleton
 - [x] **Phase 2** — PDF ingestion and chunking
 - [x] **Phase 3** — LangGraph agent with tools
-- [ ] **Phase 4** — full Streamlit UI
+- [x] **Phase 4** — full Streamlit UI
 - [ ] **Phase 5** — hardening and documentation
 - [ ] **Phase 6** — publish to GitHub
+
+Upload a PDF, choose a style and optional analysis/quotes, then click **Summarize**.
+The UI shows the agent's tool calls, the final answer, and TXT/CSV download buttons.
 
 ## Agent tools
 
