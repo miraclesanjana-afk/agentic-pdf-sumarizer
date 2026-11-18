@@ -12,7 +12,7 @@ extended with an agentic tool-calling architecture and tests.
 
 - [x] **Phase 0** — validate Gemini API key and GitHub login
 - [x] **Phase 1** — project foundation, config and Streamlit skeleton
-- [ ] **Phase 2** — PDF ingestion and chunking
+- [x] **Phase 2** — PDF ingestion and chunking
 - [ ] **Phase 3** — LangGraph agent with tools
 - [ ] **Phase 4** — full Streamlit UI
 - [ ] **Phase 5** — hardening and documentation
